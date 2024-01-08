@@ -37,15 +37,7 @@ class App:
         GLabel_142["fg"] = "#333333"
         GLabel_142["justify"] = "center"
         GLabel_142["text"] = "Output Directory"
-        GLabel_142.place(x=0, y=170, width=400, height=30)
-
-        GLabel_323 = tk.Label(root)
-        ft = tkFont.Font(family="Times", size=12)
-        GLabel_323["font"] = ft
-        GLabel_323["fg"] = "#333333"
-        GLabel_323["justify"] = "center"
-        GLabel_323["text"] = "Tscore CSV File"
-        GLabel_323.place(x=0, y=90, width=400, height=25)
+        GLabel_142.place(x=0,y=120,width=400,height=30)
 
         GLabel_882 = tk.Label(root)
         ft = tkFont.Font(family="Times", size=12)
@@ -53,7 +45,7 @@ class App:
         GLabel_882["fg"] = "#333333"
         GLabel_882["justify"] = "center"
         GLabel_882["text"] = "Spreadsheet form"
-        GLabel_882.place(x=0, y=10, width=400, height=25)
+        GLabel_882.place(x=0,y=30,width=400,height=25)
         
         GLabel_526=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -61,7 +53,7 @@ class App:
         GLabel_526["fg"] = "#333333"
         GLabel_526["justify"] = "center"
         GLabel_526["text"] = "Made by hilmoo"
-        GLabel_526.place(x=0,y=350,width=400,height=25)
+        GLabel_526.place(x=0,y=320,width=400,height=25)
 
         GLabel_39=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -69,7 +61,7 @@ class App:
         GLabel_39["fg"] = "#333333"
         GLabel_39["justify"] = "center"
         GLabel_39["text"] = "https://github.com/hilmoo"
-        GLabel_39.place(x=0,y=370,width=400,height=25)
+        GLabel_39.place(x=0,y=350,width=400,height=25)
         GLabel_39.bind("<Button-1>", self.my_github)
         GLabel_39.bind("<Enter>", lambda e: GLabel_39.config(cursor="hand2"))
 
@@ -82,7 +74,7 @@ class App:
         GLineEdit_230["fg"] = "#333333"
         GLineEdit_230["justify"] = "center"
         GLineEdit_230["text"] = "id spreadsheet"  ##################
-        GLineEdit_230.place(x=50, y=50, width=220, height=30)
+        GLineEdit_230.place(x=50,y=70,width=220,height=30)
 
         GLineEdit_303 = tk.Entry(root)
         GLineEdit_303["borderwidth"] = "1px"
@@ -91,26 +83,7 @@ class App:
         GLineEdit_303["fg"] = "#333333"
         GLineEdit_303["justify"] = "center"
         GLineEdit_303["text"] = "Spreadsheet Column"  ##################
-        GLineEdit_303.place(x=300, y=50, width=50, height=30)
-
-        GButton_961 = tk.Button(root)
-        GButton_961["bg"] = "#f0f0f0"
-        ft = tkFont.Font(family="Times", size=10)
-        GButton_961["font"] = ft
-        GButton_961["fg"] = "#000000"
-        GButton_961["justify"] = "center"
-        GButton_961["text"] = "Browse"  # Tscore
-        GButton_961.place(x=280, y=130, width=70, height=30)
-        GButton_961["command"] = lambda: self.GButton_961_command(GLineEdit_29)
-
-        GLineEdit_29 = tk.Entry(root)
-        GLineEdit_29["borderwidth"] = "1px"
-        ft = tkFont.Font(family="Times", size=10)
-        GLineEdit_29["font"] = ft
-        GLineEdit_29["fg"] = "#333333"
-        GLineEdit_29["justify"] = "center"
-        GLineEdit_29["text"] = "Tabel TScore"  ##################
-        GLineEdit_29.place(x=50, y=130, width=200, height=30)
+        GLineEdit_303.place(x=300,y=70,width=50,height=30)
 
         GLineEdit_720 = tk.Entry(root)
         GLineEdit_720["borderwidth"] = "1px"
@@ -119,7 +92,7 @@ class App:
         GLineEdit_720["fg"] = "#333333"
         GLineEdit_720["justify"] = "center"
         GLineEdit_720["text"] = "Output Path"  ##################
-        GLineEdit_720.place(x=50, y=210, width=200, height=30)
+        GLineEdit_720.place(x=50,y=160,width=200,height=30)
 
         GButton_469 = tk.Button(root)
         GButton_469["bg"] = "#f0f0f0"
@@ -128,7 +101,7 @@ class App:
         GButton_469["fg"] = "#000000"
         GButton_469["justify"] = "center"
         GButton_469["text"] = "Browse"  # Output
-        GButton_469.place(x=280, y=210, width=70, height=30)
+        GButton_469.place(x=280,y=160,width=70,height=30)
         GButton_469["command"] = lambda: self.GButton_469_command(GLineEdit_720)
 
         GButton_252 = tk.Button(root)
@@ -139,19 +112,10 @@ class App:
         GButton_252["fg"] = "#000000"
         GButton_252["justify"] = "center"
         GButton_252["text"] = "Run"  ##################
-        GButton_252.place(x=125, y=280, width=150, height=50)
+        GButton_252.place(x=130,y=240,width=150,height=50)
         GButton_252["command"] = lambda: self.GButton_252_command(
-            GLineEdit_230, GLineEdit_29, GLineEdit_303, GLineEdit_720
+            GLineEdit_230, GLineEdit_303, GLineEdit_720
         )
-
-    def GButton_961_command(self, entry_widget):  # browse tscore | gline 29
-        table_path = filedialog.askopenfilename(
-            title="Select CSV File",
-            filetypes=[("CSV files", "*.csv")],
-        )
-        if table_path:
-            entry_widget.delete(0, tk.END)
-            entry_widget.insert(0, table_path)
 
     def GButton_469_command(self, entry_widget):  # browse output | gline 720
         output_path = filedialog.askdirectory()
@@ -160,19 +124,20 @@ class App:
             entry_widget.insert(0, output_path)
 
     def GButton_252_command(
-        self, csv_JAWABAN, csv_TSCORE, Col, output_path
+        self, csv_JAWABAN, Col, output_path
     ):  # submit button
         sheet_id = csv_JAWABAN.get()
         url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
         dj = pd.read_csv(url)
         Col = int(Col.get())
 
+        csv_TSCORE = "https://raw.githubusercontent.com/hilmoo/SCL-app/main/Tscore.csv"
         DATA_DIRI = dj.iloc[Col, 0:7]
         JAWABAN = dj.iloc[Col, 7:98]
 
         DATA_GRAPH = self.DataMaker(
-            JAWABAN, csv_TSCORE.get()
-        )  # 1_006so7P_hamZqLqd7ObxqlUffRhKV07vwHwpaoJ_cI
+            JAWABAN, csv_TSCORE
+        )
 
         IMG_GRAPH = self.GraphMaker(DATA_GRAPH)
 
