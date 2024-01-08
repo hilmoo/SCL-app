@@ -10,7 +10,7 @@ A Google Form with specific ordered questions:
 5. Status
 6. Pekerjaan<br>
 <img src="https://github.com/hilmoo/SCL-app/assets/68109788/fcb977ab-2ed0-46a3-b1ad-6868845f3bda" height="500"> <br><br>
-7-98. The SCL question
+7-97. The SCL question
 
 Ensure that you create the Google Form with questions in the exact order mentioned. Otherwise, errors may occur.
 
