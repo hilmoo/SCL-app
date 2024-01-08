@@ -138,7 +138,7 @@ class App:
         GButton_252["font"] = ft
         GButton_252["fg"] = "#000000"
         GButton_252["justify"] = "center"
-        GButton_252["text"] = "Lihat Hasil"  ##################
+        GButton_252["text"] = "Run"  ##################
         GButton_252.place(x=125, y=280, width=150, height=50)
         GButton_252["command"] = lambda: self.GButton_252_command(
             GLineEdit_230, GLineEdit_29, GLineEdit_303, GLineEdit_720
