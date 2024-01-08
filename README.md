@@ -16,7 +16,7 @@ Ensure that you create the Google Form with questions in the exact order mention
 
 ## Run with executable app
 If you use the executable file, the app will take a little longer to open.
-1. Download the app here.
+1. Download the app <a href="https://github.com/hilmoo/SCL-app/releases/tag/stable">here</a>.
 3. Run the app using the executable file.
 
 ## Run with Python
